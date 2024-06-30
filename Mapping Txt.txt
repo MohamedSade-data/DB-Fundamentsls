@@ -1,0 +1,45 @@
+فى المابنج طالما عندى بيقلى one or more أو Zero Or More لازم أخليها Many To Many 
+الاختلاف ان لو Zero المشاركة هتبقى May أما لو 1 المشاركة هتبقى Must
+
+
+1
+
+Song (Title [P.K] , Author , Album_ID [f.K])
+
+Albums (ID [P.K] , Copy_Date , Title , Musician_ID_Num[F.K])
+
+Musician (ID_Num [P.k] , Name , Street , City)
+
+Instrument (Name [P.k] , Music_Key)
+
+Play ([Musician_ID_Num [F.K] , Instrument_Name [F.K]] => Composite Key)
+
+Perform ([Song_Title [F.K] , Musician_ID_Num [F.K]] => Composite Key)
+
+-------------------------------------------------------------------------------------
+2
+
+S_Office (Office_Num [P.k] , Location , Manger_Id [F.K])
+
+Employee (Emp_Id [P.K] , Name , Office_Num [F.K])
+
+Property (Property_Id [P.K] , Adderss , City , State , Zip_Code , Sales_Office_Num [F.K])
+
+Owner (Owner_Id [P.k] , Owner_Name)
+
+Owner_Have_Pro ([Owner_Id [F.K] , Property_Id [F.K]] => Composite Key , Persantage)
+
+------------------------------------------------------------------------------------------
+3
+
+Ward (Ward_Id [P.K] , Name, Supervise_Nurse_Id [F.k])
+
+Nurse (Nurse_Num [P.K], Address, Name , Serve_Ward_Id [F.K] )
+
+Drugs (Code_Num [P.K] , Recommended_Dosage , Brand_Name)
+
+Patient (Patient_Id [P.K] , Name , Date_Of_Pirth , Ward_Id [F.K] , Assigned_Cons_Id [F.K] , Examine_Cons_Id [F.K])
+
+Consultant (Cons_Id [P.K] , Name)
+
+Give_Drugs ([Nurse_Num [F.K] , Patient_Id [F.K] , Drugs_Code [F.K]] => Composite Key , Dosage , Date_Time)
